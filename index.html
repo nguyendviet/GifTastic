@@ -11,15 +11,22 @@
 	
 	<body>
 		
-		<div class="buttons"></div>
-		
-		<form>
-			<label for="topicInput">Add a topic</label>
-			<input type="text" id="topicInput"/><br/>
-			<input type="submit" value="submit" id="submit"/>
-		</form>
-		
-		<div class="topic"></div>
+		<div class="container">
+			<div class="allTopics"></div>
+			
+			<div class="row">
+				<div class="col-sm-8">Gif shown here</div>
+				
+				<div class="col-sm-4">
+					<form>
+						<label for="topicInput">Add a topic</label><br/>
+						<input type="text" id="topicInput"/><br/>
+						<button type="button" class="btn btn-success">Submit</button>
+					</form>
+				</div>
+			</div>
+			<div class="topic"></div>
+		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
