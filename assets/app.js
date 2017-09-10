@@ -4,19 +4,36 @@ $(document).ready(function() {
 	//populate a list of topics from an array
 	for (var i = 0; i < topics.length; i++) {
 		$(".allTopics").append('<button type="button" class="btn btn-info ' + 'topic' + i + '">' + topics[i] + '</button>');
+		
+		//get gif from giphy
+		//MY GIPHY API KEY: e76dd1758cb74a9bb16571a9ae644b11
+		var getGif = $.get("http://api.giphy.com/v1/gifs/search?q=" + topics[i] + "&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=10");
+		getGif.done(function(data) {
+			console.log("success got data: ", data);
+		});
 	} //can remove class topic later if not needed
 	
 	
 
 	//click on one button, show gif of that topic
+	$(".btn").on("click", function() {
+		var topicName = $(this).text();
+		var chosenTopic = $.get("http://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=10");
+		
+		chosenTopic.done(function(data) {
+			$(".showGif").html(data);
+			
+			console.log(data.data); //need to display gif/image
+		});
+		
+		
+		console.log(topicName);
+	});
 
 
+	
 
-	//GIPHY API KEY: e76dd1758cb74a9bb16571a9ae644b11
-
-	//get gif from giphy
-	var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=5"); //limit determines number of gif shown on screen
-	xhr.done(function(data) { console.log("success got data", data); });
+	
 
 	//click on each gif, it moves
 
