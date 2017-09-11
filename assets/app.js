@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	function toggleGif(src) {
 		var newSrc = "";
-		if (src.indexOf('.gif') != -1) { // if .gif in str
+		if (src.indexOf('.gif') != -1) {
 			newSrc = src.replace("giphy.gif", "480w_s.jpg");
 		}
-		else { // if .gif not in str 
+		else {
 			newSrc = src.replace("480w_s.jpg", "giphy.gif");
 		}
 		return newSrc;
@@ -40,6 +40,7 @@ $(document).ready(function() {
 		$(".allTopics").append($newTopic);
 	}
 	
+	//default topics
 	var topics = ["dog", "cat", "horse", "monkey", "panda", "cute puppy", "funny dog", "bird", "rabbit", "dance", "funny cat", "funny ape", "funny robot", "kids", "sports fail", "mr bean"];
 
 	//populate a list of topics from array topics
@@ -47,7 +48,7 @@ $(document).ready(function() {
 		addTopic(topics[i]);	
 	}
 
-	//type in input box a topic, click add, topic shows in list of topics
+	//user adds new topic
 	$(".addTopic").on("click", function() {
 		var newTopic = $("input").val();
 		
