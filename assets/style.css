@@ -5,3 +5,12 @@
 .btn {
 	margin: 0 5px;
 }
+
+.gifImg {
+	float: left;
+	margin: 10px;
+}
+
+.gifImg img {
+	width: 300px;
+}
