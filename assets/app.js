@@ -8,6 +8,7 @@ $(document).ready(function() {
 		//get gif from giphy
 		//MY GIPHY API KEY: e76dd1758cb74a9bb16571a9ae644b11
 		var getGif = $.get("http://api.giphy.com/v1/gifs/search?q=" + topics[i] + "&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=10");
+		
 		getGif.done(function(data) {
 			console.log("success got data: ", data);
 		});
@@ -21,11 +22,16 @@ $(document).ready(function() {
 		var chosenTopic = $.get("http://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=10");
 		
 		chosenTopic.done(function(data) {
-			$(".showGif").html(data);
 			
-			console.log(data.data); //need to display gif/image
+			
+			
+
+			for (var i = 0; i < data.data.length; i++) {
+				$(".showGif").append('<div style="width:100%;height:0;padding-bottom:57%;position:relative;"><iframe src="' + data.data[i].embed_url + '" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="' + data.data[i].url + '"></a></p>');
+			}
+			
+			console.log(data.data);
 		});
-		
 		
 		console.log(topicName);
 	});
