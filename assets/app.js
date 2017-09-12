@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	//default topics
+	var topics = ["dog", "cat", "horse", "monkey", "panda", "cute puppy", "funny dog", "bird", "rabbit", "dance", "funny cat", "funny ape", "funny robot", "kids", "sports fail", "mr bean", "star wars"];
+	
 	function toggleGif(src) {
 		var newSrc = "";
 		
@@ -41,11 +44,6 @@ $(document).ready(function() {
 		
 		$(".allTopics").append($newTopic);
 	}
-	
-	//add function stop default enter key press: onkeyup
-	
-	//default topics
-	var topics = ["dog", "cat", "horse", "monkey", "panda", "cute puppy", "funny dog", "bird", "rabbit", "dance", "funny cat", "funny ape", "funny robot", "kids", "sports fail", "mr bean"];
 
 	//populate a list of topics from array topics
 	for (var i = 0; i < topics.length; i++) {
@@ -62,5 +60,10 @@ $(document).ready(function() {
 		else {
 			return;
 		}
+	});
+	
+	//prevent default enter
+	$(".form").submit(function(event) {
+		event.preventDefault();
 	});
 });

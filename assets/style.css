@@ -1,9 +1,10 @@
 .allTopics {
 	line-height: 50px;
+	background: linear-gradient(135deg, #ff3300, #cc00cc);
 }
 
 .btn {
-	margin: 0 5px;
+	margin: 5px;
 }
 
 .gif {
@@ -13,4 +14,8 @@
 
 .gif img {
 	width: 300px;
+}
+
+.addTopicBoard {
+	text-align: center;
 }
