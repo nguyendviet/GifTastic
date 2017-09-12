@@ -1,6 +1,30 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(130deg, #99ff99, #ffff00);
+	background-size: 400% 400%;
+	animation: topicBackground 20s ease infinite;
+}
+
 .allTopics {
 	line-height: 50px;
-	background: linear-gradient(135deg, #ff3300, #cc00cc);
+	
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes topicBackground {
+  0%   { background-position: 0% 50%;}
+  50%  { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+
+/* Standard syntax */
+@keyframes topicBackground {
+   0%   { background-position: 0% 50%;}
+  50%  { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
 }
 
 .btn {
