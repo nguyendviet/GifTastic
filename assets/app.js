@@ -22,7 +22,7 @@ $(document).ready(function() {
 		// add event handler
 		$newTopic.on("click", function() {
 			//MY GIPHY API KEY: e76dd1758cb74a9bb16571a9ae644b11
-			var chosenTopic = $.get("http://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=10");
+			var chosenTopic = $.get("https://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=e76dd1758cb74a9bb16571a9ae644b11&limit=10");
 			
 			chosenTopic.done(function(response) {
 				//clear old topic gif
