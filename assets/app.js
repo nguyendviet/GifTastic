@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 	//user adds new topic
 	$(".addTopic").on("click", function() {
-		var newTopic = $("input").val();
+		var newTopic = $("input").val().trim();
 		
 		if (newTopic) {
 			addTopic(newTopic);
